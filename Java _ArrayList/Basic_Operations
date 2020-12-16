@@ -1,0 +1,82 @@
+package BasicOperations;
+import java.util.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class BasicOperations
+{
+	public static void main(String args[])throws IOException
+	{
+		BufferedReader b = new BufferedReader(new InputStreamReader(System.in));  
+                          /*BufferReader is used to read text from character streams while buffering the characters for efficient reading of characters*/
+	  Scanner sc=new Scanner(System.in);   //Scanner is used when we know input is of type string or of primitive types 
+	      ArrayList<String> a=new ArrayList<String>();
+	      int flag=1;
+	      while(flag==1)
+	      {
+	    	  System.out.println("1. Insert");
+	    	  System.out.println("2. Search");
+	    	  System.out.println("3. Delete");
+	    	  System.out.println("4. Display");
+	    	  System.out.println("5. Exit");
+	      System.out.println("Enter your choice");
+	      int choice=sc.nextInt();
+	      switch(choice)
+	      {
+        
+	      case 1:
+	    	  System.out.println("Enter the element to be inserted");
+	    	  a.add(b.readLine());   //this will add your element in the list
+	    	  System.out.println(" Inserted Succesfully ");
+	    	  break;
+          
+	      case 2:
+	    	  System.out.println("Enter the element to be searched");
+	    	  String s= b.readLine();
+	    	  if(a.contains(s))   //Checks whether the element is present in the list or not
+	    	  {
+	    		  System.out.println("The index of the Element is: "+a.indexOf(s));
+	    	  }
+	    	  else
+	    	  {
+	    		  System.out.println("The element is not present");
+	    	  }
+	    	  break;
+          
+	      case 3:
+	    	  System.out.println("Enter the element you want to delete");
+	    	  String s1=b.readLine();
+	    	  if(a.contains(s1))  
+	    	  {
+	    	  a.remove(s1);
+	    	  System.out.println("Element is removed successfully");
+	    	  }
+	    	  else
+	    	  {
+	    		  System.out.println("The element is not present in the list");
+	    	  }
+	    	  break;
+          
+	      case 4: 
+	    	  System.out.println("Elements present in the list are");
+	    	  if(a.size()==0) //Checks whether the list is empty or not
+	    	  {
+	    		  System.out.println("The list is Empty");
+	    	  }
+	    	  else
+	    	  {
+	    		  System.out.println(a);
+	    	  }
+	    	  break;
+          
+	      case 5: 
+	    	  System.exit(0);   // indicates successful termination
+	    	  break;
+          
+	    	default:
+	    		  System.out.println("Invalid option");
+	      }
+	    }
+	  }
+	}
