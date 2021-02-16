@@ -10,8 +10,7 @@ public static void main(String args[])
 	list.insert(5);
 	list.insert(15);
 	list.insert(25);
-  list.show();
-	
+        list.show();	
 }
 }
  
@@ -30,7 +29,7 @@ Linkedlist class
 */
 public class LinkList
 {
-node head;
+Node head;
 public void insert(int data)
 {
 	Node node=new Node();
@@ -42,7 +41,7 @@ public void insert(int data)
 	}
 	else
 	{
-		node n=head;
+		Node n=head;
 		while(n.next!=null)
 		{
 			n=n.next;
